@@ -19,7 +19,7 @@ cron.schedule("30 56 23 * * *", recordDailySummary, { scheduled: true, timezone:
 setInterval(async () => {
     const act = await axios.get("https://rule-engine-with-ast-zgt4.onrender.com/active");
     console.log(act.data);
-}, 10000);
+}, 660000);
 
 app.post("/add_city", addCity);
 app.get("/active", (req, res) => { res.send("Acitvated") });

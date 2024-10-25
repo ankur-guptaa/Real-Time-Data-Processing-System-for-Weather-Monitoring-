@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cron from "node-cron";
+import axios from "axios";
 import openWeatherAPI from "./controllers/openWeatherAPI.js";
 import addCity from "./controllers/addCity.js";
 import recordDailySummary from "./controllers/recordDailySummary.js";

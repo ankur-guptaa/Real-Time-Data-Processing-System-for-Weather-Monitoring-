@@ -1,42 +1,45 @@
 import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
+import AddCity from "./pages/addCity.jsx";
+import WeatherInfo from "./pages/WeatherInfo.jsx";
 
 function App() {
+  const navigate = useNavigate();
+
   return (
     <div>
-      {/* <div className=" w-screen bg-blue-600 text-white flex gap-8 p-4">
+      <div className=" w-screen bg-blue-600 text-white flex gap-16 p-4">
         <button
           onClick={() => {
-            navigate("/create_rule");
+            navigate("/add_city");
           }}
         >
-          Create Rule
+          Add New City
         </button>
         <button
           onClick={() => {
-            navigate("/combine_rules");
+            navigate("/weather_info");
           }}
         >
-          Combine Rule
+          Weather Info
         </button>
-        <button
+        {/* <button
           onClick={() => {
-            navigate("/evaluate_rule");
           }}
         >
           Evaluate Rule
-        </button>
+        </button> */}
       </div>
       <Routes>
         <Route
           path="/*"
-          element={<Navigate to="/evaluate_rule"></Navigate>}
+          element={<Navigate to="/weather_info"></Navigate>}
         ></Route>
-        <Route path="/create_rule" element={<CreateRule />}></Route>
-        <Route path="/combine_rules" element={<CombineRules />}></Route>
-        <Route path="/evaluate_rule" element={<EvaluateRule />}></Route>
-      </Routes> */}
+        <Route path="/add_city" element={<AddCity />}></Route>
+        <Route path="/weather_info" element={<WeatherInfo />}></Route>
+        {/* <Route path="/evaluate_rule" element={<EvaluateRule />}></Route> */}
+      </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

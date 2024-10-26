@@ -6,6 +6,8 @@ import axios from "axios";
 import openWeatherAPI from "./controllers/openWeatherAPI.js";
 import addCity from "./controllers/addCity.js";
 import recordDailySummary from "./controllers/recordDailySummary.js";
+import cityList from "./controllers/cityList.js";
+import cityWeatherData from "./controllers/cityWeatherData.js";
 
 const app = express();
 app.use(express.json());
@@ -22,6 +24,8 @@ setInterval(async () => {
 }, 660000);
 
 app.post("/add_city", addCity);
+app.get("city_list", cityList);
+app.get("city_weather_data", cityWeatherData);
 app.get("/active", (req, res) => { res.send("Acitvated") });
 
 
